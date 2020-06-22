@@ -1,23 +1,16 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Jun 16 16:53:22 2020
-
-@author: dell
-"""
-
 import cv2
 import os
 
 
-base_dir = os.path.dirname(__file__)
+base_dir = os.path.dirname(__file__) #it will print project folder name
 print(base_dir)
 
-cam=cv2.VideoCapture("E:/FAMILY/highlights.mp4")
+cam=cv2.VideoCapture(your video file path)
 
 #create folder to store images
 
 try:
-    if not os.path.exists('E:/Image_video'):
+    if not os.path.exists('E:/Image_video'): #give any folder name
         os.makedirs('E:/Image_video')
 except OSError:
     print('Error: creating folder')
@@ -27,7 +20,7 @@ i=0
 while(True):
     ret,frame=cam.read();
     if ret:
-        if(currentframe==i):
+        if(currentframe==i): #store one image for one second (30fps system)
             name="E:/Image_video/frame"+str(currentframe)+".jpg"
             print("creating..." +name)
             cv2.imwrite(name,frame)
