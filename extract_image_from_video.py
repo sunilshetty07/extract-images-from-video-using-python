@@ -5,7 +5,7 @@ import os
 base_dir = os.path.dirname(__file__) #it will print project folder name
 print(base_dir)
 
-cam=cv2.VideoCapture(your video file path)
+cam=cv2.VideoCapture(your video file path) #write your video file path here
 
 #create folder to store images
 
